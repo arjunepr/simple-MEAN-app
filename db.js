@@ -3,11 +3,13 @@ module.exports = (function () {
 
   const mongoose = require('mongoose');
 
+  mongoose.Promise = global.Promise;
+
   const ON_DEATH = require('death')({ uncaughtException: true });
 
   const { env } = require('process');
 
-  const NODE_ENV = env.NODE_ENV;
+  const { NODE_ENV } = env;
 
   let db;
 

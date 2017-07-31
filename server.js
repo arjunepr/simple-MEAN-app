@@ -6,9 +6,7 @@ const { join } = require('path');
 const bodyParser = require('body-parser');
 const { createServer } = require('http');
 const { env } = require('process');
-const mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
 
 // Routes
 const index = require('./routes/index');
