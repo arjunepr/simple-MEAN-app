@@ -7,10 +7,12 @@ module.exports = (function () {
 
   const { env } = require('process');
 
+  const NODE_ENV = env.NODE_ENV;
+
   let db;
 
 
-  if (env.NODE_ENV === 'PRODUCTION') {
+  if (NODE_ENV === 'PRODUCTION') {
 
     // Database access credentials in production.
     const username = env.USERNAME;
@@ -23,7 +25,7 @@ module.exports = (function () {
   };
 
 
-  if (env.NODE_ENV === 'DEVELOPMENT') {
+  if (NODE_ENV === 'DEVELOPMENT' || NODE_ENV === 'TEST') {
 
     const devDB = env.DEV_DB
 
