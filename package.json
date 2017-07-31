@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "A simple MEAN stack app. ",
   "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "repository": "git@github.com:arjunepr/simple-MEAN-app.git",
   "author": "Arjun Raju Pillai <revarjunr@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-react-views": "^0.10.2",
     "mongoose": "^4.11.5",
