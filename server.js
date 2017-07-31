@@ -10,7 +10,7 @@ const tasks = require('./routes/tasks');
 
 const app = express();
 
-app.set('PORT', 6000);
+app.set('PORT', 3000);
 
 const server = require('http').createServer(app);
 
@@ -29,6 +29,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
 app.use('/api', tasks);
 
-server.listen(PORT, () => {
+server.listen(app.get('PORT'), () => {
   console.log("Express started on port ", app.get('PORT'));
 });

@@ -11,6 +11,7 @@
     "express": "^4.15.3",
     "express-react-views": "^0.10.2",
     "mongoose": "^4.11.5",
+    "nodemon": "^1.11.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
