@@ -4,7 +4,8 @@
   "description": "A simple MEAN stack app. ",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "test": "mocha"
   },
   "repository": "git@github.com:arjunepr/simple-MEAN-app.git",
   "author": "Arjun Raju Pillai <revarjunr@gmail.com>",
