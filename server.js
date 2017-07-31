@@ -1,15 +1,18 @@
 require('dotenv').config();
 
+// Pull in needed packages.
 const express = require('express');
 const { join } = require('path');
 const bodyParser = require('body-parser');
 const { createServer } = require('http');
+const { env } = require('process');
+const mongoose = require('mongoose');
 
+mongoose.Promise = global.Promise;
 
-
+// Routes
 const index = require('./routes/index');
 const tasks = require('./routes/tasks');
-
 
 
 const app = express();
@@ -43,3 +46,6 @@ server.listen(app.get('PORT'), () => {
 
 
 
+if(env.NODE_ENV === 'TEST'){
+  module.exports = app;
+};
