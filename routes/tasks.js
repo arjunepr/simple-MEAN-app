@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-
+require('../db');
 
 // Creating the tasks router
 const tskRouter = Router();
