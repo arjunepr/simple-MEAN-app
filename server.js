@@ -7,6 +7,7 @@ const { createServer } = require('http');
 
 const mongoose = require('mongoose');
 
+const ON_DEATH = require('death')({uncaughtException: true});
 
 let db;
 
@@ -65,3 +66,16 @@ const server = createServer(app);
 server.listen(app.get('PORT'), () => {
   console.log("Express started on port ", app.get('PORT'));
 });
+
+
+
+
+// Gracefully cleaning up when exiting..
+
+const cleanUp = (signal, err) => db.disconnect();
+
+// The DEATH package helps in dealing with exceptions and termination signals.
+ON_DEATH(cleanUp);
+
+// For exits in general.
+process.on('exit', cleanUp);
